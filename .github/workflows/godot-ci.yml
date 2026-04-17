@@ -14,7 +14,7 @@ env:
 jobs:
   build-windows:
     name: Build Windows
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     container:
       image: barichello/godot-ci:4.6
     steps:
@@ -38,7 +38,7 @@ jobs:
 
   build-linux:
     name: Build Linux
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     container:
       image: barichello/godot-ci:4.6
     steps:
@@ -62,7 +62,7 @@ jobs:
 
   build-web:
     name: Build Web
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     container:
       image: barichello/godot-ci:4.6
     steps:
@@ -86,7 +86,7 @@ jobs:
 
   build-mac:
     name: Build Mac
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     container:
       image: barichello/godot-ci:4.6
     steps:
