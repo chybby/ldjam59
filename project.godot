@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Ldjam 59"
 config/tags=PackedStringArray("ldjam")
-run/main_scene="uid://c6vq2pv2gyfqa"
+run/main_scene="uid://diwsec3wxj6y8"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
@@ -23,6 +23,7 @@ buses/default_bus_layout="res://resources/default_bus_layout.tres"
 [autoload]
 
 GameEvents="*res://scenes/autoload/game_events.tscn"
+LevelManager="*uid://6cqanhqmodue"
 
 [debug]
 
@@ -45,6 +46,10 @@ script/templates_search_path="res://scripts/templates"
 [editor_plugins]
 
 enabled=PackedStringArray()
+
+[global_group]
+
+MainMenu=""
 
 [gui]
 

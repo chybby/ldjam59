@@ -346,17 +346,29 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eryhh"]
+size = Vector2(32, 32)
+
 [node name="VertDecoder" type="Node2D" unique_id=1778355360]
 script = ExtResource("1_eryhh")
 
 [node name="BorderSprite" type="Sprite2D" parent="." unique_id=167351361]
 unique_name_in_owner = true
-position = Vector2(0, 32)
+position = Vector2(0, 16)
 texture = SubResource("AtlasTexture_sr5c7")
 
 [node name="LetterSprite" type="AnimatedSprite2D" parent="." unique_id=1157935963]
 unique_name_in_owner = true
-position = Vector2(0, 16)
 sprite_frames = SubResource("SpriteFrames_ftkq4")
 animation = &"?"
 autoplay = " "
+
+[node name="MouseArea" type="Area2D" parent="." unique_id=1329368713]
+unique_name_in_owner = true
+position = Vector2(-16, 0)
+monitoring = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea" unique_id=1354955437]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_eryhh")

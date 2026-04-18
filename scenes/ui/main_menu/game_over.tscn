@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dixivne6qngym"]
+
+[node name="GameOverScreen" type="CanvasLayer" unique_id=753616889 groups=["MainMenu"]]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=130212305]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.22352941, 0.16862746, 0.20784314, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2084932964]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1100480567]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1609207147]
+layout_mode = 2
+text = "Game over!"
+horizontal_alignment = 1
