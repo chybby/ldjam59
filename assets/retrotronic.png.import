@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://6aeuuor4d26y"
-path="res://.godot/imported/state_machine.svg-58a4188b149bb952a360f22202378c4f.ctex"
+uid="uid://c5dvsshks0h1p"
+path="res://.godot/imported/retrotronic.png-9eb785afdc283222afa1696fd27942f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/components/state_machine/state_machine.svg"
-dest_files=["res://.godot/imported/state_machine.svg-58a4188b149bb952a360f22202378c4f.ctex"]
+source_file="res://assets/retrotronic.png"
+dest_files=["res://.godot/imported/retrotronic.png-9eb785afdc283222afa1696fd27942f0.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

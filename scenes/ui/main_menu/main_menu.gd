@@ -17,4 +17,4 @@ func on_button_pressed() -> void:
     await get_tree().create_timer(0.5).timeout
     label.text = STARTING_GAME_TEXT % 1
     await get_tree().create_timer(0.5).timeout
-    get_tree().change_scene_to_file("res://scenes/main/main.tscn")
+    get_tree().change_scene_to_file("res://scenes/levels/template.tscn")
