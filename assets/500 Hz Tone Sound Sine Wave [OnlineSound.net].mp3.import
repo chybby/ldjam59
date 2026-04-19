@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://chtww3a23fgkx"
+path="res://.godot/imported/500 Hz Tone Sound Sine Wave [OnlineSound.net].mp3-a525ed7527baeffeff747effccad4edf.mp3str"
+
+[deps]
+
+source_file="res://assets/500 Hz Tone Sound Sine Wave [OnlineSound.net].mp3"
+dest_files=["res://.godot/imported/500 Hz Tone Sound Sine Wave [OnlineSound.net].mp3-a525ed7527baeffeff747effccad4edf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -37,6 +37,7 @@ window/size/viewport_height=352
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 window/size/always_on_top.editor=true
 
 [editor]
@@ -102,4 +103,5 @@ common/enable_pause_aware_picking=true
 
 textures/canvas_textures/default_texture_filter=0
 textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.21568628, 0.21176471, 0.30588236, 1)
 environment/default_environment="res://resources/default_env.tres"

@@ -3,9 +3,47 @@
 [ext_resource type="Script" uid="uid://cvvn7riiy7eju" path="res://scenes/game_objects/decoder.gd" id="1_eryhh"]
 [ext_resource type="Texture2D" uid="uid://c7kig2tseevor" path="res://assets/spritesheet.png" id="2_wa0ns"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sr5c7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_eryhh"]
 atlas = ExtResource("2_wa0ns")
-region = Rect2(256, 128, 32, 64)
+region = Rect2(256, 128, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wa0ns"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eryhh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa0ns"]
+atlas = ExtResource("2_wa0ns")
+region = Rect2(256, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xl2qd"]
+atlas = ExtResource("2_wa0ns")
+region = Rect2(256, 192, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vv1un"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa0ns")
+}],
+"loop": true,
+"name": &"correct",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xl2qd")
+}],
+"loop": true,
+"name": &"wrong",
+"speed": 5.0
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ig6k"]
 atlas = ExtResource("2_wa0ns")
@@ -352,10 +390,15 @@ size = Vector2(32, 32)
 [node name="VertDecoder" type="Node2D" unique_id=1778355360]
 script = ExtResource("1_eryhh")
 
-[node name="BorderSprite" type="Sprite2D" parent="." unique_id=167351361]
+[node name="MonitorSprite" type="AnimatedSprite2D" parent="." unique_id=1853754004]
 unique_name_in_owner = true
-position = Vector2(0, 16)
-texture = SubResource("AtlasTexture_sr5c7")
+sprite_frames = SubResource("SpriteFrames_wa0ns")
+
+[node name="IndicatorSprite" type="AnimatedSprite2D" parent="." unique_id=1683619873]
+unique_name_in_owner = true
+position = Vector2(0, 32)
+sprite_frames = SubResource("SpriteFrames_vv1un")
+animation = &"correct"
 
 [node name="LetterSprite" type="AnimatedSprite2D" parent="." unique_id=1157935963]
 unique_name_in_owner = true

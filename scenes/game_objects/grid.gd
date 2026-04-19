@@ -37,10 +37,13 @@ func toggle(coords: Vector2i) -> void:
     var tile_data := tiles.get_cell_tile_data(coords)
     if tile_data == null:
         tiles.set_cell(coords, 1, Vector2i(4, 4))
-        check()
     elif not tile_data.get_custom_data("Locked"):
-        tiles.set_cell(coords, -1)
-        check()
+        if tile_data.get_custom_data("On"):
+            tiles.set_cell(coords, 1, Vector2i(4, 5))
+        else:
+            tiles.set_cell(coords, -1)
+
+    check()
 
 
 func check() -> void:

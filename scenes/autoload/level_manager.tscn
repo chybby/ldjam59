@@ -3,9 +3,14 @@
 [ext_resource type="Script" uid="uid://cv8yvgiqrgu4u" path="res://scenes/autoload/level_manager.gd" id="1_jnhuu"]
 [ext_resource type="PackedScene" uid="uid://lar2fad1pl6" path="res://scenes/levels/level_merits_retain.tscn" id="2_6a4e5"]
 [ext_resource type="PackedScene" uid="uid://dixivne6qngym" path="res://scenes/ui/main_menu/game_over.tscn" id="3_6a4e5"]
+[ext_resource type="PackedScene" uid="uid://du6kgqp2ls5xc" path="res://scenes/levels/level_a.tscn" id="3_himdj"]
 [ext_resource type="PackedScene" uid="uid://chfea7and0eae" path="res://scenes/levels/level_e.tscn" id="3_uaai8"]
+[ext_resource type="PackedScene" uid="uid://l33uuwx21553" path="res://scenes/levels/level_x.tscn" id="4_kc78t"]
+[ext_resource type="PackedScene" uid="uid://dpb8uvyeplkwo" path="res://scenes/levels/level_tea.tscn" id="5_22f4g"]
+[ext_resource type="PackedScene" uid="uid://cs8t0r3en85dj" path="res://scenes/levels/level_start.tscn" id="6_owqb2"]
+[ext_resource type="PackedScene" uid="uid://kitvupsjvfrf" path="res://scenes/levels/level_stop.tscn" id="7_cng5y"]
 
 [node name="LevelManager" type="Node" unique_id=1297915765]
 script = ExtResource("1_jnhuu")
-levels = Array[PackedScene]([ExtResource("3_uaai8"), ExtResource("2_6a4e5")])
+levels = Array[PackedScene]([ExtResource("3_uaai8"), ExtResource("3_himdj"), ExtResource("4_kc78t"), ExtResource("5_22f4g"), ExtResource("6_owqb2"), ExtResource("7_cng5y"), ExtResource("2_6a4e5")])
 game_over_screen = ExtResource("3_6a4e5")

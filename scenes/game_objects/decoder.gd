@@ -32,7 +32,7 @@ const MORSE_TO_ALPHA : Dictionary[String, String] = {
 
 signal updated(decoder: Decoder)
 
-@onready var border_sprite: Sprite2D = %BorderSprite
+@onready var indicator_sprite: AnimatedSprite2D = %IndicatorSprite
 @onready var letter_sprite: AnimatedSprite2D = %LetterSprite
 @onready var mouse_area: Area2D = %MouseArea
 
@@ -56,9 +56,9 @@ func decode(bits: Array[bool]) -> void:
     current_alpha = bits_to_alpha(bits)
 
     if is_wanted_letter():
-        border_sprite.modulate = Color.GREEN
+        indicator_sprite.play("correct")
     else:
-        border_sprite.modulate = Color.WHITE
+        indicator_sprite.play("wrong")
 
     letter_sprite.play(current_alpha)
     updated.emit(self)
