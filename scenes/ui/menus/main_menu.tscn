@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://diwsec3wxj6y8"]
+
+[ext_resource type="Script" uid="uid://w46dc6uxe0s2" path="res://scenes/ui/menus/main_menu.gd" id="1_bb83b"]
+[ext_resource type="PackedScene" uid="uid://bw4dqwda1g0gh" path="res://scenes/ui/sound_button/sound_button.tscn" id="2_3dq3e"]
+
+[node name="MainMenuScreen" type="CanvasLayer" unique_id=753616889]
+script = ExtResource("1_bb83b")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=2084932964]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Title" type="Label" parent="MarginContainer" unique_id=589915309]
+layout_mode = 2
+theme_override_font_sizes/font_size = 93
+text = "UNNAMED GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" parent="MarginContainer" unique_id=2102908606 instance=ExtResource("2_3dq3e")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "PLAY"

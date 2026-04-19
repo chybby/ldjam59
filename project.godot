@@ -24,6 +24,9 @@ buses/default_bus_layout="res://resources/default_bus_layout.tres"
 
 GameEvents="*res://scenes/autoload/game_events.tscn"
 LevelManager="*uid://6cqanhqmodue"
+Narrator="*uid://d2o185oghschn"
+Settings="*uid://df7ukf5gghmf4"
+Transition="*uid://t1t1740mb873"
 
 [debug]
 
@@ -32,8 +35,8 @@ gdscript/warnings/shadowed_variable=0
 
 [display]
 
-window/size/viewport_width=640
-window/size/viewport_height=352
+window/size/viewport_width=512
+window/size/viewport_height=320
 window/size/window_width_override=1920
 window/size/window_height_override=1080
 window/stretch/mode="canvas_items"
@@ -42,6 +45,7 @@ window/size/always_on_top.editor=true
 
 [editor]
 
+movie_writer/movie_file="C:/Users/achyb/Desktop/recording.avi"
 script/templates_search_path="res://scripts/templates"
 
 [editor_plugins]
@@ -55,6 +59,7 @@ MainMenu=""
 [gui]
 
 theme/custom="res://resources/ui_theme.tres"
+theme/custom_font="uid://rjr1eulgs0ha"
 common/drop_mouse_on_gui_input_disabled=true
 
 [input]
@@ -87,6 +92,11 @@ click={
 "deadzone": 0.2,
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":0,"position":Vector2(0, 0),"global_position":Vector2(0, 0),"factor":1.0,"button_index":1,"canceled":false,"pressed":false,"double_click":false,"script":null)
 , null]
+}
+pause={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194305,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
 }
 
 [layer_names]

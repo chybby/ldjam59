@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://da6aja1uuuqxo" path="res://scenes/game_objects/morse_letter.gd" id="1_84qsn"]
 [ext_resource type="Texture2D" uid="uid://c7kig2tseevor" path="res://assets/spritesheet.png" id="1_leq0p"]
-[ext_resource type="AudioStream" uid="uid://chtww3a23fgkx" path="res://assets/500 Hz Tone Sound Sine Wave [OnlineSound.net].mp3" id="3_0a2yd"]
+[ext_resource type="PackedScene" uid="uid://cofx2ob74lkiu" path="res://scenes/game_objects/morse_audio_player.tscn" id="3_0a2yd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84qsn"]
 atlas = ExtResource("1_leq0p")
@@ -61,6 +61,5 @@ monitorable = false
 position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_k80hb")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=233296056]
+[node name="MorseAudioPlayer" parent="." unique_id=1892211016 instance=ExtResource("3_0a2yd")]
 unique_name_in_owner = true
-stream = ExtResource("3_0a2yd")

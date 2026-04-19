@@ -1,8 +1,6 @@
 extends CanvasLayer
 class_name MainMenu
 
-signal started_game
-
 @onready var button: Button = %Button
 
 
@@ -11,4 +9,6 @@ func _ready() -> void:
 
 
 func on_button_pressed() -> void:
-    started_game.emit()
+    Transition.transition()
+    await Transition.obscuring
+    get_tree().change_scene_to_file("res://scenes/levels/intro.tscn")

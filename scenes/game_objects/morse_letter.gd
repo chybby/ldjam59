@@ -1,4 +1,7 @@
 extends Node2D
+class_name MorseLetter
+
+signal played
 
 const ALPHA_TO_MORSE: Dictionary[String, String] = {
     "A": ".-",
@@ -32,7 +35,7 @@ const ALPHA_TO_MORSE: Dictionary[String, String] = {
 @export var letter: String = "A"
 
 @onready var mouse_area: Area2D = %MouseArea
-@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
+@onready var morse_audio_player: AudioStreamPlayer = %MorseAudioPlayer
 @onready var light_sprite: AnimatedSprite2D = $LightSprite
 
 
@@ -41,10 +44,10 @@ func _ready() -> void:
 
 
 func fill_buffer() -> void:
-    var playback := audio_stream_player.get_stream_playback() as AudioStreamGeneratorPlayback
+    var playback := morse_audio_player.get_stream_playback() as AudioStreamGeneratorPlayback
     var pulse_hz = 440.0
     var phase = 0.0
-    var increment = pulse_hz / audio_stream_player.stream.mix_rate
+    var increment = pulse_hz / morse_audio_player.stream.mix_rate
     var frames_available = playback.get_frames_available()
 
     for i in range(frames_available):
@@ -54,17 +57,18 @@ func fill_buffer() -> void:
 
 func turn_on() -> void:
     light_sprite.play("lit")
-    await get_tree().create_tween().tween_property(audio_stream_player, "volume_linear", 1, 0.02).finished
+    await get_tree().create_tween().tween_property(morse_audio_player, "volume_linear", 1, 0.02).finished
 
 
 func turn_off() -> void:
     light_sprite.play("pressed")
-    await get_tree().create_tween().tween_property(audio_stream_player, "volume_linear", 0, 0.02).finished
+    await get_tree().create_tween().tween_property(morse_audio_player, "volume_linear", 0, 0.02).finished
 
 
 func play() -> void:
-    audio_stream_player.volume_linear = 0
-    audio_stream_player.play()
+    played.emit()
+    morse_audio_player.volume_linear = 0
+    morse_audio_player.play()
     var morse := ALPHA_TO_MORSE[letter]
 
     for c in morse:
@@ -77,12 +81,12 @@ func play() -> void:
         await turn_off()
 
     await get_tree().create_timer(0.5).timeout
-    audio_stream_player.stop()
+    morse_audio_player.stop()
     light_sprite.play("default")
 
 
 func on_mouse_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-    if audio_stream_player.playing:
+    if morse_audio_player.playing:
         return
     if event.is_action_pressed("click"):
         light_sprite.play("pressed")

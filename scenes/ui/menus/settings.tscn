@@ -1,0 +1,168 @@
+[gd_scene format=3 uid="uid://df7ukf5gghmf4"]
+
+[ext_resource type="Script" uid="uid://ch1xxnk03km28" path="res://scenes/ui/menus/settings.gd" id="1_2wrqq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8bbdq"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.21568628, 0.21176471, 0.30588236, 1)
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 5
+
+[sub_resource type="Animation" id="Animation_2wrqq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -106)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8bbdq"]
+resource_name = "show"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.24148433, 1),
+"update": 0,
+"values": [Vector2(0, -106), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Fade:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.25000012, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.78431374)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_81oq2"]
+_data = {
+&"RESET": SubResource("Animation_2wrqq"),
+&"show": SubResource("Animation_8bbdq")
+}
+
+[node name="Settings" type="CanvasLayer" unique_id=9159312]
+process_mode = 3
+layer = 2
+script = ExtResource("1_2wrqq")
+
+[node name="Fade" type="ColorRect" parent="." unique_id=1936390421]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.11006815, 0.10757228, 0.1660232, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=369558836]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -106.0
+offset_bottom = -6.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_8bbdq")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=402961245]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1796518554]
+layout_mode = 2
+theme_override_constants/separation = 17
+
+[node name="SettingsLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1283958577]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1178485638]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1780286843]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/separation = 6
+alignment = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=802410672]
+layout_mode = 2
+text = "MUSIC"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer" unique_id=598262237]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="MusicSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer/MarginContainer" unique_id=677859733]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=583203485]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_constants/separation = 6
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=402117302]
+layout_mode = 2
+text = "EFFECTS"
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2" unique_id=480402544]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+
+[node name="EffectsSlider" type="HSlider" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2/MarginContainer" unique_id=1899427841]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=130903658]
+unique_name_in_owner = true
+libraries/ = SubResource("AnimationLibrary_81oq2")

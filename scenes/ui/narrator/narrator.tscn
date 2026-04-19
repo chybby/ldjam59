@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://d2o185oghschn"]
+
+[ext_resource type="Script" uid="uid://db3oopispux6o" path="res://scenes/ui/narrator/narrator.gd" id="1_82l6p"]
+[ext_resource type="PackedScene" uid="uid://bseq5xbk6siab" path="res://scenes/ui/narrator/speech_bubble.tscn" id="1_wxgk6"]
+
+[node name="Narrator" type="CanvasLayer" unique_id=314868770]
+script = ExtResource("1_82l6p")
+speech_bubble_scene = ExtResource("1_wxgk6")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=766895911]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+
+[node name="SpeechBubbleStack" type="VBoxContainer" parent="MarginContainer" unique_id=443803111]
+unique_name_in_owner = true
+layout_mode = 2

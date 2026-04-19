@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://bseq5xbk6siab"]
+
+[ext_resource type="Script" uid="uid://b8ox8owpqt6if" path="res://scenes/ui/narrator/speech_bubble.gd" id="1_7tvcv"]
+[ext_resource type="PackedScene" uid="uid://cofx2ob74lkiu" path="res://scenes/game_objects/morse_audio_player.tscn" id="1_nlvr3"]
+[ext_resource type="Texture2D" uid="uid://c7kig2tseevor" path="res://assets/spritesheet.png" id="2_apnd3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndw2i"]
+atlas = ExtResource("2_apnd3")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7j0qs"]
+texture = SubResource("AtlasTexture_ndw2i")
+texture_margin_left = 18.0
+texture_margin_top = 6.0
+texture_margin_right = 6.0
+texture_margin_bottom = 6.0
+
+[node name="SpeechBubble" type="MarginContainer" unique_id=1760612319]
+offset_right = 49.0
+offset_bottom = 26.0
+scale = Vector2(1, 1e-05)
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+script = ExtResource("1_7tvcv")
+
+[node name="Panel" type="PanelContainer" parent="." unique_id=1883769398]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxTexture_7j0qs")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel" unique_id=154324657]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 2
+
+[node name="Label" type="RichTextLabel" parent="Panel/MarginContainer" unique_id=1061960622]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_colors/default_color = Color(0.22352941, 0.16862746, 0.20784314, 1)
+theme_override_font_sizes/normal_font_size = 31
+bbcode_enabled = true
+text = "I WILL BE BRIEF"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+shortcut_keys_enabled = false
+
+[node name="MorseAudioPlayer" parent="." unique_id=1892211016 instance=ExtResource("1_nlvr3")]
+unique_name_in_owner = true

@@ -1,6 +1,8 @@
 extends Node2D
 class_name Grid
 
+signal interacted
+
 @onready var board: TileMapLayer = %Board
 @onready var tiles: TileMapLayer = %Tiles
 
@@ -21,7 +23,7 @@ func add_vertical_decoder(decoder: Decoder) -> void:
 func _unhandled_input(event: InputEvent) -> void:
     if event is InputEventMouseButton:
         if event.is_action_released("click"):
-            var coords := tiles.local_to_map(event.position)
+            var coords := tiles.local_to_map(tiles.to_local(event.global_position))
             toggle(coords)
 
 
@@ -33,6 +35,8 @@ func is_enabled_cell(coords: Vector2i) -> bool:
 func toggle(coords: Vector2i) -> void:
     if not is_enabled_cell(coords):
         return
+
+    interacted.emit()
 
     var tile_data := tiles.get_cell_tile_data(coords)
     if tile_data == null:

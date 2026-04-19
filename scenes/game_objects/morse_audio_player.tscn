@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://cofx2ob74lkiu"]
+
+[ext_resource type="AudioStream" uid="uid://chtww3a23fgkx" path="res://assets/500 Hz Tone Sound Sine Wave [OnlineSound.net].mp3" id="1_3f0yd"]
+
+[node name="MorseAudioPlayer" type="AudioStreamPlayer" unique_id=1892211016]
+stream = ExtResource("1_3f0yd")
+bus = &"SFX"
