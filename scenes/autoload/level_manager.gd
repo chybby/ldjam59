@@ -8,7 +8,8 @@ var current_level : Level = null
 
 func _ready() -> void:
     var main_menu = get_tree().get_first_node_in_group("MainMenu")
-    main_menu.started_game.connect(on_start_game)
+    if main_menu != null:
+        main_menu.started_game.connect(on_start_game)
 
 
 func start_level(index: int) -> void:

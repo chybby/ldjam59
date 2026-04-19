@@ -385,7 +385,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eryhh"]
-size = Vector2(32, 32)
+size = Vector2(32, 30)
 
 [node name="VertDecoder" type="Node2D" unique_id=1778355360]
 script = ExtResource("1_eryhh")
@@ -413,5 +413,5 @@ monitoring = false
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea" unique_id=1354955437]
-position = Vector2(16, 0)
+position = Vector2(16, 1)
 shape = SubResource("RectangleShape2D_eryhh")

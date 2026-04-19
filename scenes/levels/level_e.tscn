@@ -1,13 +1,13 @@
 [gd_scene format=4 uid="uid://chfea7and0eae"]
 
-[ext_resource type="Script" uid="uid://c7t2yow7e4rrk" path="res://scenes/levels/level_e.gd" id="1_fiq81"]
+[ext_resource type="Script" uid="uid://cs2f8t8vuivhh" path="res://scenes/levels/level.gd" id="1_hclid"]
 [ext_resource type="PackedScene" uid="uid://cabddbjfik5gu" path="res://scenes/game_objects/grid.tscn" id="1_j2425"]
 [ext_resource type="PackedScene" uid="uid://def8hbq6w2gno" path="res://scenes/game_objects/hor_decoder.tscn" id="2_ra442"]
 [ext_resource type="PackedScene" uid="uid://c6vq2pv2gyfqa" path="res://scenes/levels/level_template.tscn" id="3_fiq81"]
 [ext_resource type="PackedScene" uid="uid://v707rcuf1u7q" path="res://scenes/game_objects/morse_letter.tscn" id="3_hclid"]
 
 [node name="LevelE" type="Node2D" unique_id=634945197]
-script = ExtResource("1_fiq81")
+script = ExtResource("1_hclid")
 
 [node name="Grid" parent="." unique_id=396082387 instance=ExtResource("1_j2425")]
 unique_name_in_owner = true

@@ -9,8 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://dpb8uvyeplkwo" path="res://scenes/levels/level_tea.tscn" id="5_22f4g"]
 [ext_resource type="PackedScene" uid="uid://cs8t0r3en85dj" path="res://scenes/levels/level_start.tscn" id="6_owqb2"]
 [ext_resource type="PackedScene" uid="uid://kitvupsjvfrf" path="res://scenes/levels/level_stop.tscn" id="7_cng5y"]
+[ext_resource type="PackedScene" uid="uid://geqga5jfop6g" path="res://scenes/levels/level_tea_time.tscn" id="8_moj54"]
 
 [node name="LevelManager" type="Node" unique_id=1297915765]
 script = ExtResource("1_jnhuu")
-levels = Array[PackedScene]([ExtResource("3_uaai8"), ExtResource("3_himdj"), ExtResource("4_kc78t"), ExtResource("5_22f4g"), ExtResource("6_owqb2"), ExtResource("7_cng5y"), ExtResource("2_6a4e5")])
+levels = Array[PackedScene]([ExtResource("3_uaai8"), ExtResource("3_himdj"), ExtResource("4_kc78t"), ExtResource("5_22f4g"), ExtResource("6_owqb2"), ExtResource("7_cng5y"), ExtResource("8_moj54"), ExtResource("2_6a4e5")])
 game_over_screen = ExtResource("3_6a4e5")
