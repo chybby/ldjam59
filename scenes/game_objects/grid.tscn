@@ -389,4 +389,5 @@ tile_set = SubResource("TileSet_jvvt4")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1311394059]
 unique_name_in_owner = true
 stream = ExtResource("3_x3fci")
+volume_db = 20.0
 bus = &"SFX"
