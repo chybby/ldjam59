@@ -58,4 +58,4 @@ shortcut_keys_enabled = false
 
 [node name="MorseAudioPlayer" parent="." unique_id=1892211016 instance=ExtResource("1_nlvr3")]
 unique_name_in_owner = true
-stream = null
+volume_db = -25.01
