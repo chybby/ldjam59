@@ -17,10 +17,12 @@ func _ready() -> void:
     for decoder in horizontal_decoders_parent.get_children() as Array[Decoder]:
         grid.add_horizontal_decoder(decoder)
         horizontal_decoders.append(decoder)
+        decoder.updated.connect(on_grid_updated)
 
     for decoder in vertical_decoders_parent.get_children()  as Array[Decoder]:
         grid.add_vertical_decoder(decoder)
         vertical_decoders.append(decoder)
+        decoder.updated.connect(on_grid_updated)
 
     level_template.next_level_button_pressed.connect(on_next_level_button_pressed)
     level_template.reset_button_pressed.connect(on_reset_button_pressed)

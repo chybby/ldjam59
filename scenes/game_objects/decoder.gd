@@ -30,6 +30,7 @@ const MORSE_TO_ALPHA : Dictionary[String, String] = {
     "--..": "Z",
 }
 
+signal updated
 signal interacted
 
 @onready var monitor_sprite: AnimatedSprite2D = %MonitorSprite
@@ -78,6 +79,7 @@ func decode(bits: Array[bool]) -> void:
         indicator_sprite.play("wrong")
 
     letter_sprite.play(current_alpha)
+    updated.emit()
 
 
 func bits_to_alpha(bits: Array[bool]) -> String:

@@ -46,12 +46,13 @@ func toggle(coords: Vector2i) -> void:
         return
 
     interacted.emit()
-    audio_stream_player.play()
 
     var tile_data := tiles.get_cell_tile_data(coords)
     if tile_data == null:
         tiles.set_cell(coords, 1, Vector2i(4, 4))
+        audio_stream_player.play()
     elif not tile_data.get_custom_data("Locked"):
+        audio_stream_player.play()
         if tile_data.get_custom_data("On"):
             tiles.set_cell(coords, 1, Vector2i(4, 5))
         else:
