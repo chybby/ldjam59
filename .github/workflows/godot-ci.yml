@@ -7,7 +7,7 @@ on:
 
 env:
   GODOT_VERSION: 4.6
-  EXPORT_NAME: ldjam59
+  EXPORT_NAME: Dot Dash Mash
   ITCHIO_USERNAME: chybby
   ITCHIO_GAME: ldjam59
 
@@ -29,7 +29,7 @@ jobs:
       - name: Windows Build
         run: |
           mkdir -v -p export/windows
-          godot -v --headless --quit --export-release "Windows Desktop" export/windows/$EXPORT_NAME.exe
+          godot -v --headless --quit --export-release "Windows Desktop" "export/windows/$EXPORT_NAME.exe"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -53,7 +53,7 @@ jobs:
       - name: Linux Build
         run: |
           mkdir -v -p export/linux
-          godot -v --headless --quit --export-release "Linux/X11" export/linux/$EXPORT_NAME.x86_64
+          godot -v --headless --quit --export-release "Linux/X11" "export/linux/$EXPORT_NAME.x86_64"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -101,7 +101,7 @@ jobs:
       - name: Mac Build
         run: |
           mkdir -v -p export/mac
-          godot -v --headless --quit --export-release "macOS" export/mac/$EXPORT_NAME.zip
+          godot -v --headless --quit --export-release "macOS" "export/mac/$EXPORT_NAME.zip"
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -213,24 +213,24 @@ jobs:
       - name: Zip Windows Build
         run: |
           cd windows/
-          zip -r $EXPORT_NAME-windows.zip *
-          mv $EXPORT_NAME-windows.zip ../
+          zip -r "$EXPORT_NAME-windows.zip" *
+          mv "$EXPORT_NAME-windows.zip" ../
           cd ..
       - name: Zip Linux Build
         run: |
           cd linux/
-          zip -r $EXPORT_NAME-linux.zip *
-          mv $EXPORT_NAME-linux.zip ../
+          zip -r "$EXPORT_NAME-linux.zip" *
+          mv "$EXPORT_NAME-linux.zip" ../
           cd ..
       - name: Zip Web Build
         run: |
           cd web/
-          zip -r $EXPORT_NAME-web.zip *
-          mv $EXPORT_NAME-web.zip ../
+          zip -r "$EXPORT_NAME-web.zip" *
+          mv "$EXPORT_NAME-web.zip" ../
           cd ..
       - name: Zip Mac Build
         run: |
-          cp mac/*.zip $EXPORT_NAME-mac.zip
+          cp mac/*.zip "$EXPORT_NAME-mac.zip"
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
