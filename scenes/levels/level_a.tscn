@@ -19,11 +19,11 @@ tile_map_data = PackedByteArray("AAADAAMAAQABAAYAAAAEAAMAAQABAAYAAAAEAAIAAQABAAY
 
 [node name="MorseLetter" parent="." unique_id=1843523515 instance=ExtResource("2_v8w5n")]
 unique_name_in_owner = true
-position = Vector2(104, 160)
+position = Vector2(112, 160)
 
 [node name="HorizontalDecoders" type="Node2D" parent="." unique_id=732873327]
 unique_name_in_owner = true
-position = Vector2(-48, 16)
+position = Vector2(-40, 16)
 
 [node name="HorDecoder" parent="HorizontalDecoders" unique_id=1778355360 instance=ExtResource("3_qwf4p")]
 position = Vector2(184, 144)
@@ -38,7 +38,7 @@ unique_name_in_owner = true
 
 [node name="Arrow" parent="." unique_id=62101614 instance=ExtResource("6_qwf4p")]
 unique_name_in_owner = true
-position = Vector2(104, 128)
+position = Vector2(112, 128)
 
 [node name="SecondArrowPosition" type="Marker2D" parent="." unique_id=1510540060]
 unique_name_in_owner = true

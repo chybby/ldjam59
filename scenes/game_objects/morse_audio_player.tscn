@@ -1,4 +1,5 @@
 [gd_scene format=3 uid="uid://cofx2ob74lkiu"]
 
 [node name="MorseAudioPlayer" type="AudioStreamPlayer" unique_id=1892211016]
+volume_db = -5.0
 bus = &"SFX"

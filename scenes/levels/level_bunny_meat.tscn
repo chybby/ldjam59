@@ -46,7 +46,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.25, 1),
 "update": 0,
-"values": [Vector2(-96, -192), Vector2(-96, -48)]
+"values": [Vector2(-96, -192), Vector2(-96, -40)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -58,7 +58,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(0.25, 1),
 "update": 0,
-"values": [Vector2(-96, -192), Vector2(-96, -48)]
+"values": [Vector2(-96, -192), Vector2(-96, -40)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p2gtm"]
@@ -81,23 +81,23 @@ tile_map_data = PackedByteArray("AAADAAMAAQABAAYAAAAEAAMAAQABAAYAAAAEAAIAAQABAAY
 tile_map_data = PackedByteArray("AAAHAAUAAQAGAAQAAAAJAAUAAQAGAAQAAAAMAAUAAQAGAAQAAAAQAAYAAQAGAAQAAAAOAAcAAQAGAAQAAAANAAgAAQAGAAQAAAALAAgAAQAGAAQAAAAIAAgAAQAGAAQAAAAJAAkAAQAFAAQAAAALAAkAAQAFAAQAAAAOAAkAAQAFAAQAAAAPAAgAAQAFAAQAAAANAAYAAQAFAAQAAAAIAAcAAQAFAAQAAAA=")
 
 [node name="MorseLetterB" parent="." unique_id=1843523515 instance=ExtResource("2_occyu")]
-position = Vector2(56, 128)
+position = Vector2(64, 128)
 letter = "B"
 
 [node name="MorseLetterU" parent="." unique_id=1000261498 instance=ExtResource("2_occyu")]
-position = Vector2(56, 160)
+position = Vector2(64, 160)
 letter = "U"
 
 [node name="MorseLetterN" parent="." unique_id=1674915355 instance=ExtResource("2_occyu")]
-position = Vector2(56, 192)
+position = Vector2(64, 192)
 letter = "N"
 
 [node name="MorseLetterN2" parent="." unique_id=2109504566 instance=ExtResource("2_occyu")]
-position = Vector2(56, 224)
+position = Vector2(64, 224)
 letter = "N"
 
 [node name="MorseLetterY" parent="." unique_id=860538085 instance=ExtResource("2_occyu")]
-position = Vector2(56, 256)
+position = Vector2(64, 256)
 letter = "Y"
 
 [node name="VerticalMorse" type="Node2D" parent="." unique_id=590294596]
@@ -121,7 +121,7 @@ letter = "T"
 
 [node name="HorizontalDecoders" type="Node2D" parent="." unique_id=1579801071]
 unique_name_in_owner = true
-position = Vector2(-96, -48)
+position = Vector2(-88, -48)
 
 [node name="HorDecoderB" parent="HorizontalDecoders" unique_id=1778355360 instance=ExtResource("3_bn4qg")]
 position = Vector2(184, 176)

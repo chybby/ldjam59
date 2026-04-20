@@ -9,6 +9,8 @@ func _ready() -> void:
     vertical_morse.hide()
     vertical_decoders_parent.hide()
 
+    Narrator.add_message("I SWITCHED CHANNELS.")
+
 
 func on_grid_updated() -> void:
     super()
@@ -20,3 +22,4 @@ func on_grid_updated() -> void:
         vertical_morse.show()
         vertical_decoders_parent.show()
         animation_player.play("show")
+        Narrator.add_message("DAMN IT.")

@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dixivne6qngym"]
 
+[ext_resource type="Script" uid="uid://c2hjl1ilbbhsd" path="res://scenes/ui/menus/game_over.gd" id="1_uqh2p"]
+[ext_resource type="PackedScene" uid="uid://bw4dqwda1g0gh" path="res://scenes/ui/sound_button/sound_button.tscn" id="2_x1xl7"]
+
 [node name="GameOverScreen" type="CanvasLayer" unique_id=753616889 groups=["MainMenu"]]
+script = ExtResource("1_uqh2p")
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=2084932964]
 anchors_preset = 15
@@ -8,14 +12,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1100480567]
-custom_minimum_size = Vector2(300, 0)
+[node name="BackButton" parent="MarginContainer" unique_id=2016851199 instance=ExtResource("2_x1xl7")]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer" unique_id=1609207147]
-layout_mode = 2
-text = "Game over!"
-horizontal_alignment = 1
+size_flags_vertical = 8
+text = "RESTART"

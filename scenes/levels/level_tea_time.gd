@@ -9,6 +9,8 @@ func _ready() -> void:
     vertical_morse.hide()
     vertical_decoders_parent.hide()
 
+    Narrator.add_message("TOO EASY.")
+
 
 func on_grid_updated() -> void:
     super()
@@ -20,3 +22,5 @@ func on_grid_updated() -> void:
         vertical_morse.show()
         vertical_decoders_parent.show()
         animation_player.play("show")
+        Narrator.add_message("INTERFERENCE.")
+        Narrator.add_message("FIND A WAY.")
