@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://w46dc6uxe0s2" path="res://scenes/ui/menus/main_menu.gd" id="1_bb83b"]
 [ext_resource type="PackedScene" uid="uid://bw4dqwda1g0gh" path="res://scenes/ui/sound_button/sound_button.tscn" id="2_3dq3e"]
+[ext_resource type="Texture2D" uid="uid://di626p2xpgj00" path="res://assets/thumb_trans.png" id="2_whicr"]
 
 [node name="MainMenuScreen" type="CanvasLayer" unique_id=753616889]
 script = ExtResource("1_bb83b")
@@ -17,12 +18,13 @@ theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 20
 theme_override_constants/margin_bottom = 20
 
-[node name="Title" type="Label" parent="MarginContainer" unique_id=589915309]
+[node name="TextureRect" type="TextureRect" parent="MarginContainer" unique_id=1725959603]
+custom_minimum_size = Vector2(300, 250)
 layout_mode = 2
-theme_override_font_sizes/font_size = 93
-text = "UNNAMED GAME"
-horizontal_alignment = 1
-vertical_alignment = 1
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("2_whicr")
+stretch_mode = 5
 
 [node name="PlayButton" parent="MarginContainer" unique_id=2102908606 instance=ExtResource("2_3dq3e")]
 unique_name_in_owner = true
@@ -33,6 +35,7 @@ text = "PLAY"
 
 [node name="RandButton" parent="MarginContainer" unique_id=396143886 instance=ExtResource("2_3dq3e")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 8
 text = "RAND"
