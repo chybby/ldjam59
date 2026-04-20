@@ -5,78 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://v707rcuf1u7q" path="res://scenes/game_objects/morse_letter.tscn" id="2_v8w5n"]
 [ext_resource type="PackedScene" uid="uid://def8hbq6w2gno" path="res://scenes/game_objects/hor_decoder.tscn" id="3_qwf4p"]
 [ext_resource type="PackedScene" uid="uid://c6vq2pv2gyfqa" path="res://scenes/levels/level_template.tscn" id="4_ebk0e"]
-[ext_resource type="Texture2D" uid="uid://c7kig2tseevor" path="res://assets/spritesheet.png" id="6_qwf4p"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ebk0e"]
-atlas = ExtResource("6_qwf4p")
-region = Rect2(288, 0, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_f6g4b"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ebk0e")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="Animation" id="Animation_qwf4p"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Arrow:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(104, 128)]
-}
-
-[sub_resource type="Animation" id="Animation_ebk0e"]
-resource_name = "bounce"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Arrow:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(0.35, 3, 1),
-"update": 0,
-"values": [Vector2(104, 128), Vector2(104, 120), Vector2(104, 128)]
-}
-
-[sub_resource type="Animation" id="Animation_f6g4b"]
-resource_name = "bounce_2"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Arrow:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4, 0.8),
-"transitions": PackedFloat32Array(0.35, 3, 1),
-"update": 0,
-"values": [Vector2(288, 120), Vector2(288, 112), Vector2(288, 118.85714)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_f6g4b"]
-_data = {
-&"RESET": SubResource("Animation_qwf4p"),
-&"bounce": SubResource("Animation_ebk0e"),
-&"bounce_2": SubResource("Animation_f6g4b")
-}
+[ext_resource type="PackedScene" uid="uid://xwjn0yi004yv" path="res://scenes/levels/arrow.tscn" id="6_qwf4p"]
 
 [node name="LevelA" type="Node2D" unique_id=1617108485]
 script = ExtResource("1_v8w5n")
@@ -107,13 +36,12 @@ position = Vector2(-48, 16)
 [node name="LevelTemplate" parent="." unique_id=689545948 instance=ExtResource("4_ebk0e")]
 unique_name_in_owner = true
 
-[node name="Arrow" type="AnimatedSprite2D" parent="." unique_id=1365989005]
+[node name="Arrow" parent="." unique_id=62101614 instance=ExtResource("6_qwf4p")]
 unique_name_in_owner = true
 position = Vector2(104, 128)
-sprite_frames = SubResource("SpriteFrames_f6g4b")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1605077003]
-libraries/ = SubResource("AnimationLibrary_f6g4b")
-autoplay = &"bounce"
+[node name="SecondArrowPosition" type="Marker2D" parent="." unique_id=1510540060]
+unique_name_in_owner = true
+position = Vector2(288, 120)
 
 [editable path="Grid"]

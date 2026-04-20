@@ -2,6 +2,7 @@ extends Node2D
 class_name Grid
 
 signal interacted
+signal updated
 
 @onready var board: TileMapLayer = %Board
 @onready var tiles: TileMapLayer = %Tiles
@@ -10,13 +11,20 @@ var horizontal_decoders: Dictionary[int, Decoder] = {}
 var vertical_decoders: Dictionary[int, Decoder] = {}
 
 
+func reset() -> void:
+    for tile in tiles.get_used_cells():
+        if not tiles.get_cell_tile_data(tile).get_custom_data("Locked"):
+            tiles.set_cell(tile, -1)
+    check()
+
+
 func add_horizontal_decoder(decoder: Decoder) -> void:
-    var coords = board.local_to_map(decoder.position)
+    var coords = board.local_to_map(board.to_local(decoder.global_position))
     horizontal_decoders[coords.y] = decoder
 
 
 func add_vertical_decoder(decoder: Decoder) -> void:
-    var coords = board.local_to_map(decoder.position)
+    var coords = board.local_to_map(board.to_local(decoder.global_position))
     vertical_decoders[coords.x] = decoder
 
 
@@ -75,3 +83,4 @@ func check() -> void:
                 else:
                     bits.append(tile_data.get_custom_data("On"))
         decoder.decode(bits)
+    updated.emit()

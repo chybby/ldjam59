@@ -40,12 +40,15 @@ const ALPHA_TO_MORSE: Dictionary[String, String] = {
 @onready var morse_audio_player: AudioStreamPlayer = %MorseAudioPlayer
 @onready var light_sprite: AnimatedSprite2D = $LightSprite
 
+var playing = false
 
 func _ready() -> void:
     mouse_area.input_event.connect(on_mouse_event)
+    mouse_area.mouse_exited.connect(on_mouse_exited)
 
 
 func play() -> void:
+    playing = true
     played.emit()
     var morse := ALPHA_TO_MORSE[letter]
 
@@ -61,14 +64,20 @@ func play() -> void:
         light_sprite.play("pressed")
 
     await get_tree().create_timer(0.5).timeout
-    morse_audio_player.stop()
     light_sprite.play("default")
+    playing = false
 
 
 func on_mouse_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-    if morse_audio_player.playing:
+    if playing:
         return
     if event.is_action_pressed("click"):
         light_sprite.play("pressed")
     elif event.is_action_released("click"):
         play()
+
+
+func on_mouse_exited() -> void:
+    if playing:
+        return
+    light_sprite.play("default")

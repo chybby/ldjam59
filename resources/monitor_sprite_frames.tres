@@ -1,0 +1,54 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://d35waw1a1ubbk"]
+
+[ext_resource type="Texture2D" uid="uid://c7kig2tseevor" path="res://assets/spritesheet.png" id="1_0mj8p"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycpb7"]
+atlas = ExtResource("1_0mj8p")
+region = Rect2(256, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mdxa"]
+atlas = ExtResource("1_0mj8p")
+region = Rect2(224, 128, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eryhh"]
+atlas = ExtResource("1_0mj8p")
+region = Rect2(224, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vv1un"]
+atlas = ExtResource("1_0mj8p")
+region = Rect2(224, 192, 32, 32)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycpb7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mdxa")
+}],
+"loop": true,
+"name": &"inverted",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eryhh")
+}],
+"loop": true,
+"name": &"locked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vv1un")
+}],
+"loop": true,
+"name": &"locked_inverted",
+"speed": 5.0
+}]

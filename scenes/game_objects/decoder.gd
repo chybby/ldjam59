@@ -30,13 +30,20 @@ const MORSE_TO_ALPHA : Dictionary[String, String] = {
     "--..": "Z",
 }
 
-signal updated(decoder: Decoder)
+signal interacted
 
+@onready var monitor_sprite: AnimatedSprite2D = %MonitorSprite
 @onready var indicator_sprite: AnimatedSprite2D = %IndicatorSprite
 @onready var letter_sprite: AnimatedSprite2D = %LetterSprite
 @onready var mouse_area: Area2D = %MouseArea
 
 @export var wanted_letter: String = ""
+@export var invertible: bool = false:
+    set(value):
+        invertible = value
+        if mouse_area != null:
+            mouse_area.input_pickable = invertible
+@export var show_lock: bool = false
 
 var current_bits : Array[bool] = []
 var current_alpha := " "
@@ -44,7 +51,16 @@ var inverted := false
 
 
 func _ready() -> void:
+    letter_sprite.modulate = Color("b9d4b4ff")
+    if not invertible:
+        mouse_area.input_pickable = false
     mouse_area.input_event.connect(on_mouse_event)
+    update_monitor_sprite()
+
+
+func reset() -> void:
+    if invertible and inverted:
+        invert()
 
 
 func is_wanted_letter() -> bool:
@@ -61,7 +77,6 @@ func decode(bits: Array[bool]) -> void:
         indicator_sprite.play("wrong")
 
     letter_sprite.play(current_alpha)
-    updated.emit(self)
 
 
 func bits_to_alpha(bits: Array[bool]) -> String:
@@ -90,14 +105,29 @@ func bits_to_alpha(bits: Array[bool]) -> String:
     return alpha
 
 
+func update_monitor_sprite() -> void:
+    if inverted:
+        if invertible or not show_lock:
+            monitor_sprite.play("inverted")
+        else:
+            monitor_sprite.play("locked_inverted")
+    else:
+        if invertible or not show_lock:
+            monitor_sprite.play("default")
+        else:
+            monitor_sprite.play("locked")
+
+
 func invert() -> void:
     inverted = !inverted
+    update_monitor_sprite()
     decode(current_bits)
     if inverted:
-        letter_sprite.modulate = Color.RED
+        letter_sprite.modulate = Color("355d69ff")
     else:
-        letter_sprite.modulate = Color.WHITE
+        letter_sprite.modulate = Color("b9d4b4ff")
 
 func on_mouse_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
     if event.is_action_released("click"):
+        interacted.emit()
         invert()

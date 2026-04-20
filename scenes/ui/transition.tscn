@@ -1,20 +1,60 @@
 [gd_scene format=3 uid="uid://t1t1740mb873"]
 
 [ext_resource type="Script" uid="uid://cijmmmbrs3olk" path="res://scenes/ui/transition.gd" id="1_px6ob"]
+[ext_resource type="Shader" uid="uid://cskca7njj5xb4" path="res://scenes/ui/transition.gdshader" id="2_jpjvg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ghw5a"]
+shader = ExtResource("2_jpjvg")
+shader_parameter/color = Color(0.010431332, 0.00985033, 0.02147931, 1)
+shader_parameter/uamp = 50.0
+shader_parameter/ufreq = 0.03
+shader_parameter/uy = 175.0
+shader_parameter/uw = 0.0
+shader_parameter/uspeed = 200.0
 
 [sub_resource type="Animation" id="Animation_px6ob"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Curtain:modulate")
+tracks/0/path = NodePath("Curtain:mouse_filter")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Curtain:material:shader_parameter/uw")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_jpjvg"]
+resource_name = "transition"
+length = 1.5
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"emit_obscuring"
+}]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -23,51 +63,22 @@ tracks/1/path = NodePath("Curtain:mouse_filter")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 0.75),
+"transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [2]
-}
-
-[sub_resource type="Animation" id="Animation_jpjvg"]
-resource_name = "transition"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Curtain:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(0.35355365, 0.34151018, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0.5),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"emit_obscuring"
-}]
+"values": [0, 2]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Curtain:mouse_filter")
+tracks/2/path = NodePath("Curtain:material:shader_parameter/uw")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [0, 2]
+"times": PackedFloat32Array(0, 0.75, 1.5),
+"transitions": PackedFloat32Array(4.0569324, 0.23325826, 1),
+"update": 0,
+"values": [0.0, 500.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ghw5a"]
@@ -81,14 +92,14 @@ layer = 2
 script = ExtResource("1_px6ob")
 
 [node name="Curtain" type="ColorRect" parent="." unique_id=1915356721]
-modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_ghw5a")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-color = Color(0, 0, 0, 1)
+color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1127882738]
 unique_name_in_owner = true

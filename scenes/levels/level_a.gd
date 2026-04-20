@@ -1,8 +1,8 @@
 extends Level
 
 @onready var morse_letter: MorseLetter = %MorseLetter
-@onready var arrow: AnimatedSprite2D = %Arrow
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var arrow: Node2D = %Arrow
+@onready var second_arrow_position: Marker2D = %SecondArrowPosition
 
 var tut_done = false
 
@@ -25,7 +25,7 @@ func on_played() -> void:
     arrow.hide()
     await get_tree().create_timer(2).timeout
     Narrator.add_message("SEND THE SIGNAL.")
-    animation_player.play("bounce_2")
+    arrow.position = second_arrow_position.position
     arrow.show()
     await grid.interacted
     arrow.hide()

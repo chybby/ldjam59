@@ -2,21 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cvvn7riiy7eju" path="res://scenes/game_objects/decoder.gd" id="1_eryhh"]
 [ext_resource type="Texture2D" uid="uid://c7kig2tseevor" path="res://assets/spritesheet.png" id="2_wa0ns"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eryhh"]
-atlas = ExtResource("2_wa0ns")
-region = Rect2(256, 128, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_wa0ns"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eryhh")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://d35waw1a1ubbk" path="res://resources/monitor_sprite_frames.tres" id="2_xl2qd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wa0ns"]
 atlas = ExtResource("2_wa0ns")
@@ -392,7 +378,8 @@ script = ExtResource("1_eryhh")
 
 [node name="MonitorSprite" type="AnimatedSprite2D" parent="." unique_id=1853754004]
 unique_name_in_owner = true
-sprite_frames = SubResource("SpriteFrames_wa0ns")
+sprite_frames = ExtResource("2_xl2qd")
+animation = &"locked_inverted"
 
 [node name="IndicatorSprite" type="AnimatedSprite2D" parent="." unique_id=1683619873]
 unique_name_in_owner = true

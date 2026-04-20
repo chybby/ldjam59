@@ -2,14 +2,17 @@ extends Node2D
 class_name LevelTemplate
 
 signal next_level_button_pressed
+signal reset_button_pressed
 
 @onready var next_level_button: SoundButton = %NextLevelButton
+@onready var reset_button: SoundButton = %ResetButton
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 
 var button_shown = false
 
 func _ready() -> void:
     next_level_button.pressed.connect(on_next_level_button_pressed)
+    reset_button.pressed.connect(on_reset_button_pressed)
 
 
 func show_next_level_button() -> void:
@@ -22,3 +25,6 @@ func show_next_level_button() -> void:
 
 func on_next_level_button_pressed() -> void:
     next_level_button_pressed.emit()
+
+func on_reset_button_pressed() -> void:
+    reset_button_pressed.emit()

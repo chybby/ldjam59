@@ -24,6 +24,7 @@ buses/default_bus_layout="res://resources/default_bus_layout.tres"
 
 GameEvents="*res://scenes/autoload/game_events.tscn"
 LevelManager="*uid://6cqanhqmodue"
+Background="*uid://dfopwlm43beuv"
 Narrator="*uid://d2o185oghschn"
 Settings="*uid://df7ukf5gghmf4"
 Transition="*uid://t1t1740mb873"
@@ -36,11 +37,11 @@ gdscript/warnings/shadowed_variable=0
 [display]
 
 window/size/viewport_width=512
-window/size/viewport_height=320
-window/size/window_width_override=1920
-window/size/window_height_override=1080
+window/size/viewport_height=352
+window/size/window_width_override=1536
+window/size/window_height_override=1056
 window/stretch/mode="canvas_items"
-window/stretch/scale_mode="integer"
+mouse_cursor/custom_image="uid://jlwhhg62bfhn"
 window/size/always_on_top.editor=true
 
 [editor]

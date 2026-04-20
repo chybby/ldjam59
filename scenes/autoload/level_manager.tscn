@@ -8,10 +8,16 @@
 [ext_resource type="PackedScene" uid="uid://dpb8uvyeplkwo" path="res://scenes/levels/level_tea.tscn" id="5_22f4g"]
 [ext_resource type="PackedScene" uid="uid://cs8t0r3en85dj" path="res://scenes/levels/level_start.tscn" id="6_owqb2"]
 [ext_resource type="PackedScene" uid="uid://kitvupsjvfrf" path="res://scenes/levels/level_stop.tscn" id="7_cng5y"]
+[ext_resource type="PackedScene" uid="uid://bgx0el53ucnya" path="res://scenes/levels/level_make_haste.tscn" id="8_2n4i5"]
 [ext_resource type="PackedScene" uid="uid://geqga5jfop6g" path="res://scenes/levels/level_tea_time.tscn" id="8_moj54"]
 [ext_resource type="PackedScene" uid="uid://cs4oy7rmqmfvh" path="res://scenes/levels/level_bunny_meat.tscn" id="9_1uh47"]
+[ext_resource type="PackedScene" uid="uid://dsfrop0wwjjbn" path="res://scenes/levels/level_town_remarkable.tscn" id="11_7lgao"]
+[ext_resource type="PackedScene" uid="uid://p0qf4nuqtybi" path="res://scenes/levels/level_animate_again.tscn" id="12_7d3vy"]
+[ext_resource type="PackedScene" uid="uid://782sdgd8f841" path="res://scenes/levels/level_f.tscn" id="13_hnb0a"]
+[ext_resource type="PackedScene" uid="uid://depg7c8b8mhvt" path="res://scenes/levels/level_steam_titan.tscn" id="14_m0o4j"]
+[ext_resource type="PackedScene" uid="uid://bn81e0372kn7o" path="res://scenes/levels/level_massive_waves.tscn" id="15_itdeo"]
 
 [node name="LevelManager" type="Node" unique_id=1297915765]
 script = ExtResource("1_jnhuu")
-levels = Array[PackedScene]([ExtResource("3_himdj"), ExtResource("4_kc78t"), ExtResource("5_22f4g"), ExtResource("6_owqb2"), ExtResource("7_cng5y"), ExtResource("8_moj54"), ExtResource("9_1uh47"), ExtResource("2_6a4e5")])
+levels = Array[PackedScene]([ExtResource("3_himdj"), ExtResource("4_kc78t"), ExtResource("5_22f4g"), ExtResource("6_owqb2"), ExtResource("7_cng5y"), ExtResource("8_moj54"), ExtResource("8_2n4i5"), ExtResource("9_1uh47"), ExtResource("2_6a4e5"), ExtResource("11_7lgao"), ExtResource("12_7d3vy"), ExtResource("13_hnb0a"), ExtResource("14_m0o4j"), ExtResource("15_itdeo")])
 game_over_screen = ExtResource("3_6a4e5")

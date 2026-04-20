@@ -2,21 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cvvn7riiy7eju" path="res://scenes/game_objects/decoder.gd" id="1_ycpb7"]
 [ext_resource type="Texture2D" uid="uid://c7kig2tseevor" path="res://assets/spritesheet.png" id="2_7mdxa"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ycpb7"]
-atlas = ExtResource("2_7mdxa")
-region = Rect2(256, 128, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_7mdxa"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ycpb7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://d35waw1a1ubbk" path="res://resources/monitor_sprite_frames.tres" id="2_qisa4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qisa4"]
 atlas = ExtResource("2_7mdxa")
@@ -392,7 +378,7 @@ script = ExtResource("1_ycpb7")
 
 [node name="MonitorSprite" type="AnimatedSprite2D" parent="." unique_id=322076228]
 unique_name_in_owner = true
-sprite_frames = SubResource("SpriteFrames_7mdxa")
+sprite_frames = ExtResource("2_qisa4")
 
 [node name="IndicatorSprite" type="AnimatedSprite2D" parent="." unique_id=1606599581]
 unique_name_in_owner = true
@@ -409,7 +395,6 @@ autoplay = " "
 [node name="MouseArea" type="Area2D" parent="." unique_id=195605700]
 unique_name_in_owner = true
 position = Vector2(-16, 0)
-input_pickable = false
 monitoring = false
 monitorable = false
 

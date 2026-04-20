@@ -23,8 +23,8 @@ func reset() -> void:
 
 func start_next_speech_bubble() -> void:
     if hidden_speech_bubbles.size() == 0:
-        messages_empty.emit()
         playing = false
+        messages_empty.emit()
         return
 
     playing = true

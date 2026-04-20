@@ -13,18 +13,19 @@ var vertical_decoders : Array[Decoder] = []
 
 
 func _ready() -> void:
+    Background.randomize_params()
     for decoder in horizontal_decoders_parent.get_children() as Array[Decoder]:
         grid.add_horizontal_decoder(decoder)
         horizontal_decoders.append(decoder)
-        decoder.updated.connect(on_decoder_updated)
 
     for decoder in vertical_decoders_parent.get_children()  as Array[Decoder]:
         grid.add_vertical_decoder(decoder)
         vertical_decoders.append(decoder)
-        decoder.updated.connect(on_decoder_updated)
 
     level_template.next_level_button_pressed.connect(on_next_level_button_pressed)
+    level_template.reset_button_pressed.connect(on_reset_button_pressed)
 
+    grid.updated.connect(on_grid_updated)
     grid.check()
 
 
@@ -42,5 +43,13 @@ func on_next_level_button_pressed() -> void:
     finished_level.emit()
 
 
-func on_decoder_updated(decoder: Decoder) -> void:
+func on_reset_button_pressed() -> void:
+    for d in horizontal_decoders:
+        d.reset()
+    for d in vertical_decoders:
+        d.reset()
+    grid.reset()
+
+
+func on_grid_updated() -> void:
     check_win()

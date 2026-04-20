@@ -10,8 +10,8 @@ func _ready() -> void:
     vertical_decoders_parent.hide()
 
 
-func on_decoder_updated(decoder: Decoder) -> void:
-    super(decoder)
+func on_grid_updated() -> void:
+    super()
 
     if vertical_morse.visible:
         return
