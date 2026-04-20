@@ -33,6 +33,8 @@ const ALPHA_TO_MORSE: Dictionary[String, String] = {
 }
 
 @export var letter: String = "A"
+@export var dit_stream: AudioStream
+@export var dah_stream: AudioStream
 
 @onready var mouse_area: Area2D = %MouseArea
 @onready var morse_audio_player: AudioStreamPlayer = %MorseAudioPlayer
@@ -43,42 +45,20 @@ func _ready() -> void:
     mouse_area.input_event.connect(on_mouse_event)
 
 
-func fill_buffer() -> void:
-    var playback := morse_audio_player.get_stream_playback() as AudioStreamGeneratorPlayback
-    var pulse_hz = 440.0
-    var phase = 0.0
-    var increment = pulse_hz / morse_audio_player.stream.mix_rate
-    var frames_available = playback.get_frames_available()
-
-    for i in range(frames_available):
-        playback.push_frame(Vector2.ONE * sin(phase * TAU))
-        phase = fmod(phase + increment, 1.0)
-
-
-func turn_on() -> void:
-    light_sprite.play("lit")
-    await get_tree().create_tween().tween_property(morse_audio_player, "volume_linear", 1, 0.02).finished
-
-
-func turn_off() -> void:
-    light_sprite.play("pressed")
-    await get_tree().create_tween().tween_property(morse_audio_player, "volume_linear", 0, 0.02).finished
-
-
 func play() -> void:
     played.emit()
-    morse_audio_player.volume_linear = 0
-    morse_audio_player.play()
     var morse := ALPHA_TO_MORSE[letter]
 
     for c in morse:
         await get_tree().create_timer(0.1).timeout
-        await turn_on()
+        light_sprite.play("lit")
         if c == ".":
-            await get_tree().create_timer(0.1).timeout
+            morse_audio_player.stream = dit_stream
         else:
-            await get_tree().create_timer(0.3).timeout
-        await turn_off()
+            morse_audio_player.stream = dah_stream
+        morse_audio_player.play()
+        await morse_audio_player.finished
+        light_sprite.play("pressed")
 
     await get_tree().create_timer(0.5).timeout
     morse_audio_player.stop()

@@ -35,28 +35,23 @@ const ALPHA_TO_MORSE: Dictionary[String, String] = {
 const TIME_UNIT = 0.04
 
 @export var text: String
+@export var dit_stream: AudioStream
+@export var dah_stream: AudioStream
 
 @onready var label: RichTextLabel = %Label
 @onready var morse_audio_player: AudioStreamPlayer = %MorseAudioPlayer
+
+var playing = false
 
 
 func _ready() -> void:
     modulate = Color.TRANSPARENT
     label.text = text
     label.visible_characters = 0
-    turn_off()
 
 
 func is_playing() -> bool:
-    return morse_audio_player.playing
-
-
-func turn_on() -> void:
-    await get_tree().create_tween().tween_property(morse_audio_player, "volume_linear", 1, 0.001).finished
-
-
-func turn_off() -> void:
-    await get_tree().create_tween().tween_property(morse_audio_player, "volume_linear", 0, 0.001).finished
+    return playing
 
 
 func play_char(c: String) -> void:
@@ -71,13 +66,12 @@ func play_char(c: String) -> void:
             else:
                 await get_tree().create_timer(TIME_UNIT).timeout
 
-            await turn_on()
-
             if mc == ".":
-                await get_tree().create_timer(TIME_UNIT).timeout
+                morse_audio_player.stream = dit_stream
             else:
-                await get_tree().create_timer(TIME_UNIT * 3).timeout
-            await turn_off()
+                morse_audio_player.stream = dah_stream
+            morse_audio_player.play()
+            await morse_audio_player.finished
 
 
 func collapse() -> void:
@@ -87,14 +81,16 @@ func collapse() -> void:
 
 
 func play() -> void:
+    playing = true
     scale.y = 0
     modulate = Color.WHITE
     await create_tween().tween_property(self, "scale:y", 1, 0.2).from(0).finished
-    morse_audio_player.play()
+
     while label.visible_characters < label.text.length():
         var cur_char = label.text[label.visible_characters]
         label.visible_characters += 1
         await play_char(cur_char)
         await get_tree().create_timer(TIME_UNIT * 3).timeout
-    morse_audio_player.stop()
+
+    playing = false
     done.emit()

@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b8ox8owpqt6if" path="res://scenes/ui/narrator/speech_bubble.gd" id="1_7tvcv"]
 [ext_resource type="PackedScene" uid="uid://cofx2ob74lkiu" path="res://scenes/game_objects/morse_audio_player.tscn" id="1_nlvr3"]
+[ext_resource type="AudioStream" uid="uid://cocwbqq0pd6s4" path="res://assets/dit-fade.wav" id="2_7j0qs"]
 [ext_resource type="Texture2D" uid="uid://c7kig2tseevor" path="res://assets/spritesheet.png" id="2_apnd3"]
+[ext_resource type="AudioStream" uid="uid://cf7pd350butne" path="res://assets/dah-fade.wav" id="3_f0nke"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ndw2i"]
 atlas = ExtResource("2_apnd3")
@@ -24,6 +26,8 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 0
 script = ExtResource("1_7tvcv")
+dit_stream = ExtResource("2_7j0qs")
+dah_stream = ExtResource("3_f0nke")
 
 [node name="Panel" type="PanelContainer" parent="." unique_id=1883769398]
 layout_mode = 2
@@ -54,3 +58,4 @@ shortcut_keys_enabled = false
 
 [node name="MorseAudioPlayer" parent="." unique_id=1892211016 instance=ExtResource("1_nlvr3")]
 unique_name_in_owner = true
+stream = null

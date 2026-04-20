@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://da6aja1uuuqxo" path="res://scenes/game_objects/morse_letter.gd" id="1_84qsn"]
 [ext_resource type="Texture2D" uid="uid://c7kig2tseevor" path="res://assets/spritesheet.png" id="1_leq0p"]
+[ext_resource type="AudioStream" uid="uid://i2mesk3fww7a" path="res://assets/long-dit-fade.wav" id="2_4euxo"]
 [ext_resource type="PackedScene" uid="uid://cofx2ob74lkiu" path="res://scenes/game_objects/morse_audio_player.tscn" id="3_0a2yd"]
+[ext_resource type="AudioStream" uid="uid://xhbrnk2jhkne" path="res://assets/long-dah-fade.wav" id="3_m6784"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84qsn"]
 atlas = ExtResource("1_leq0p")
@@ -48,6 +50,8 @@ size = Vector2(32, 30)
 
 [node name="MorseLetter" type="Node2D" unique_id=1843523515]
 script = ExtResource("1_84qsn")
+dit_stream = ExtResource("2_4euxo")
+dah_stream = ExtResource("3_m6784")
 
 [node name="LightSprite" type="AnimatedSprite2D" parent="." unique_id=466817435]
 sprite_frames = SubResource("SpriteFrames_0a2yd")
