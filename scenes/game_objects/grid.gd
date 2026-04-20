@@ -6,6 +6,7 @@ signal updated
 
 @onready var board: TileMapLayer = %Board
 @onready var tiles: TileMapLayer = %Tiles
+@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 var horizontal_decoders: Dictionary[int, Decoder] = {}
 var vertical_decoders: Dictionary[int, Decoder] = {}
@@ -45,6 +46,7 @@ func toggle(coords: Vector2i) -> void:
         return
 
     interacted.emit()
+    audio_stream_player.play()
 
     var tile_data := tiles.get_cell_tile_data(coords)
     if tile_data == null:

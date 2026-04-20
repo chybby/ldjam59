@@ -36,6 +36,7 @@ signal interacted
 @onready var indicator_sprite: AnimatedSprite2D = %IndicatorSprite
 @onready var letter_sprite: AnimatedSprite2D = %LetterSprite
 @onready var mouse_area: Area2D = %MouseArea
+@onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer
 
 @export var wanted_letter: String = ""
 @export var invertible: bool = false:
@@ -129,5 +130,6 @@ func invert() -> void:
 
 func on_mouse_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
     if event.is_action_released("click"):
+        audio_stream_player.play()
         interacted.emit()
         invert()

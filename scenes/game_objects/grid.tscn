@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c7kig2tseevor" path="res://assets/spritesheet.png" id="1_sr5c7"]
 [ext_resource type="Script" uid="uid://uv05gufx4gtf" path="res://scenes/game_objects/grid.gd" id="1_x3fci"]
+[ext_resource type="AudioStream" uid="uid://bm3vnvtjstapc" path="res://assets/pop.wav" id="3_x3fci"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_sr5c7"]
 texture = ExtResource("1_sr5c7")
@@ -384,3 +385,8 @@ tile_set = SubResource("TileSet_x3fci")
 [node name="Tiles" type="TileMapLayer" parent="." unique_id=1990562444]
 unique_name_in_owner = true
 tile_set = SubResource("TileSet_jvvt4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1311394059]
+unique_name_in_owner = true
+stream = ExtResource("3_x3fci")
+bus = &"SFX"

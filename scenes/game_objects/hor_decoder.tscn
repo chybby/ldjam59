@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cvvn7riiy7eju" path="res://scenes/game_objects/decoder.gd" id="1_ycpb7"]
 [ext_resource type="Texture2D" uid="uid://c7kig2tseevor" path="res://assets/spritesheet.png" id="2_7mdxa"]
 [ext_resource type="SpriteFrames" uid="uid://d35waw1a1ubbk" path="res://resources/monitor_sprite_frames.tres" id="2_qisa4"]
+[ext_resource type="AudioStream" uid="uid://bm3vnvtjstapc" path="res://assets/pop.wav" id="4_qisa4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qisa4"]
 atlas = ExtResource("2_7mdxa")
@@ -401,3 +402,8 @@ monitorable = false
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MouseArea" unique_id=863852342]
 position = Vector2(16, 1)
 shape = SubResource("RectangleShape2D_ycpb7")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=330206719]
+unique_name_in_owner = true
+stream = ExtResource("4_qisa4")
+bus = &"SFX"

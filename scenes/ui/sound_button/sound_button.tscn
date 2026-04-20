@@ -1,16 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bw4dqwda1g0gh"]
+[gd_scene format=3 uid="uid://bw4dqwda1g0gh"]
 
 [ext_resource type="Script" uid="uid://b55vntbdr5i0l" path="res://scenes/ui/sound_button/sound_button.gd" id="1_2ltns"]
+[ext_resource type="AudioStream" uid="uid://bm3vnvtjstapc" path="res://assets/pop.wav" id="2_n6f3i"]
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_n0l6x"]
-
-[node name="SoundButton" type="Button"]
+[node name="SoundButton" type="Button" unique_id=1362714711]
 offset_right = 8.0
 offset_bottom = 8.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 script = ExtResource("1_2ltns")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = SubResource("AudioStreamRandomizer_n0l6x")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=97753823]
+stream = ExtResource("2_n6f3i")
 bus = &"SFX"
