@@ -52,9 +52,6 @@ size = Vector2(32, 30)
 script = ExtResource("1_84qsn")
 dit_stream = ExtResource("2_4euxo")
 dah_stream = ExtResource("3_m6784")
-music_atten_factor = 0.1
-music_atten_time_in = 0.1
-music_atten_time_out = 1.0
 
 [node name="LightSprite" type="AnimatedSprite2D" parent="." unique_id=466817435]
 sprite_frames = SubResource("SpriteFrames_0a2yd")
