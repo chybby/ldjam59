@@ -9,7 +9,7 @@ env:
   GODOT_VERSION: 4.6
   EXPORT_NAME: Dot Dash Mash
   ITCHIO_USERNAME: chybby
-  ITCHIO_GAME: ldjam59
+  ITCHIO_GAME: dot-dash-mash
 
 jobs:
   build-windows:

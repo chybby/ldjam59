@@ -407,4 +407,5 @@ shape = SubResource("RectangleShape2D_eryhh")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=576271124]
 unique_name_in_owner = true
 stream = ExtResource("4_xl2qd")
+volume_db = 20.0
 bus = &"SFX"

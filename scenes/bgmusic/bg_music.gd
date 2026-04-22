@@ -36,4 +36,3 @@ func attenuate() -> Callable:
         out_tween.tween_callback(func():
             num_attenuating -= 1
         )
-    

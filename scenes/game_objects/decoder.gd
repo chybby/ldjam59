@@ -1,7 +1,7 @@
 extends Node2D
 class_name Decoder
 
-const MORSE_TO_ALPHA : Dictionary[String, String] = {
+const MORSE_TO_ALPHA: Dictionary[String, String] = {
     ".-": "A",
     "-...": "B",
     "-.-.": "C",
@@ -47,7 +47,7 @@ signal interacted
             mouse_area.input_pickable = invertible
 @export var show_lock: bool = false
 
-var current_bits : Array[bool] = []
+var current_bits: Array[bool] = []
 var current_alpha := " "
 var inverted := false
 
@@ -79,7 +79,6 @@ func decode(bits: Array[bool]) -> void:
         indicator_sprite.play("wrong")
 
     letter_sprite.play(current_alpha)
-    updated.emit()
 
 
 func bits_to_alpha(bits: Array[bool]) -> String:
@@ -87,7 +86,7 @@ func bits_to_alpha(bits: Array[bool]) -> String:
     var morse: String = ""
 
     if inverted:
-        bits_copy = bits_copy.map(func (x): return not x)
+        bits_copy = bits_copy.map(func(x): return not x)
 
     bits_copy.append(false)
     var length := 0
@@ -125,6 +124,7 @@ func invert() -> void:
     inverted = !inverted
     update_monitor_sprite()
     decode(current_bits)
+    updated.emit()
     if inverted:
         letter_sprite.modulate = Color("355d69ff")
     else:
