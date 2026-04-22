@@ -3,3 +3,4 @@
 [node name="MorseAudioPlayer" type="AudioStreamPlayer" unique_id=1892211016]
 volume_db = -5.0
 bus = &"SFX"
+playback_type = 1
