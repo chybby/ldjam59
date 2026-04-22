@@ -67,3 +67,4 @@ shape = SubResource("RectangleShape2D_k80hb")
 
 [node name="MorseAudioPlayer" parent="." unique_id=1892211016 instance=ExtResource("3_0a2yd")]
 unique_name_in_owner = true
+bus = &"MorseLetter"

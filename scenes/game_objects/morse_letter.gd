@@ -51,9 +51,6 @@ func play() -> void:
     playing = true
     played.emit()
 
-    # music down
-    var reset_attenuation = BgMusic.attenuate()
-
     var morse := ALPHA_TO_MORSE[letter]
 
     for c in morse:
@@ -70,9 +67,6 @@ func play() -> void:
     await get_tree().create_timer(0.5).timeout
     light_sprite.play("default")
     playing = false
-
-    # music up
-    reset_attenuation.call()
 
 
 func on_mouse_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

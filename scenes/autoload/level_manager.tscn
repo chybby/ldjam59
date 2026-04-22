@@ -16,8 +16,16 @@
 [ext_resource type="PackedScene" uid="uid://782sdgd8f841" path="res://scenes/levels/level_f.tscn" id="13_hnb0a"]
 [ext_resource type="PackedScene" uid="uid://depg7c8b8mhvt" path="res://scenes/levels/level_steam_titan.tscn" id="14_m0o4j"]
 [ext_resource type="PackedScene" uid="uid://bn81e0372kn7o" path="res://scenes/levels/level_massive_waves.tscn" id="15_itdeo"]
+[ext_resource type="AudioStream" uid="uid://bht2isvfinxsb" path="res://assets/bgmusic.ogg" id="17_7lgao"]
 
 [node name="LevelManager" type="Node" unique_id=1297915765]
 script = ExtResource("1_jnhuu")
 levels = Array[PackedScene]([ExtResource("3_himdj"), ExtResource("4_kc78t"), ExtResource("5_22f4g"), ExtResource("6_owqb2"), ExtResource("7_cng5y"), ExtResource("8_moj54"), ExtResource("8_2n4i5"), ExtResource("9_1uh47"), ExtResource("2_6a4e5"), ExtResource("11_7lgao"), ExtResource("12_7d3vy"), ExtResource("13_hnb0a"), ExtResource("14_m0o4j"), ExtResource("15_itdeo")])
 game_over_screen = ExtResource("3_6a4e5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1716795756]
+stream = ExtResource("17_7lgao")
+volume_db = -6.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
